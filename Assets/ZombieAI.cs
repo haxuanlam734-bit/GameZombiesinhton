@@ -141,6 +141,9 @@ public class ZombieAI : MonoBehaviour
          
         playerHealth.TakeDamage(attackDamage);
 
+        // Hiển thị vệt máu trên UI
+        DamageIndicator.Instance?.Show(transform.position);
+
         // TODO: Thêm animation tấn công ở đây
     }
 

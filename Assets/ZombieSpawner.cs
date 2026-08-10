@@ -1,15 +1,14 @@
 using UnityEngine;
+using System.Collections.Generic;
 
-// Đây là một script giả lập để UIManager có thể hoạt động.
-// Bạn sẽ cần thay thế nó bằng hệ thống Spawner hoàn chỉnh của mình.
+// Phiên bản nâng cấp của ZombieSpawner để script Editor có thể tham chiếu
 public class ZombieSpawner : MonoBehaviour
 {
-    [Tooltip("Wave hiện tại")]
+    [Tooltip("Danh sách các điểm sẽ sinh ra Zombie")]
+    public List<Transform> spawnPoints = new List<Transform>();
+
+    // Các biến này được UIManager sử dụng
     public int currentWave = 1;
-
-    [Tooltip("Số lượng zombie còn lại trong wave")]
-    public int zombiesLeft = 10;
-
-    [Tooltip("Thời gian đếm ngược đến wave tiếp theo")]
-    public float timeToNextWave = 0f;
+    public int zombiesLeft = 0;
+    public float timeToNextWave = 5f;
 }
